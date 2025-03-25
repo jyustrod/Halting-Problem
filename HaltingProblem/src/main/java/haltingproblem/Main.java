@@ -24,7 +24,7 @@ public class Main {
         finito.execute();
 
         System.out.println("\nProbando programa infinito:");
-        // countUp.execute(); // Descomentar para probar bucle infinito
+        // infinito.execute(); // Descomentar para probar bucle infinito
 
         System.out.println("\nProbando Reverser con programa finito:");
         // Reverser.execute(finito); // Descomentar para probar bucle infinito
