@@ -1,25 +1,22 @@
 package haltingproblem;
 
-import haltingproblem.maquinas.Reverser;
+import haltingproblem.builders.Director;
+import haltingproblem.builders.ProgramaConcreteBuilder;
 import haltingproblem.programas.Programa;
-import haltingproblem.programas.ProgramaFinito;
-import haltingproblem.programas.ProgramaInfinito;
 
 public class Main {
     public static void main(String[] args) {
-        Programa finito = new ProgramaFinito(5);
-        Programa infinito = new ProgramaInfinito(1);
+        ProgramaConcreteBuilder builder = new ProgramaConcreteBuilder();
+        Director director = new Director(builder);
 
-        System.out.println("Probando programa finito:");
+        System.out.println("Creando un programa finito:");
+        director.make("finito", 5);
+        Programa finito = director.getPrograma();
         finito.execute();
 
-        System.out.println("\nProbando programa infinito:");
-        // countUp.execute(); // Descomentar para probar bucle infinito
-
-        System.out.println("\nProbando Reverser con programa finito:");
-        // Reverser.execute(finito); // Descomentar para probar bucle infinito
-
-        System.out.println("\nProbando Reverser con programa infinito:");
-        Reverser.execute(infinito);
+        System.out.println("\nCreando un programa infinito:");
+        director.make("infinito", 1);
+        Programa infinito = director.getPrograma();
+        // infinito.execute(); // Descomentar para probar bucle infinito
     }
 }
