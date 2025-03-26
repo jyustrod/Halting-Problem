@@ -1,6 +1,8 @@
 package haltingproblem.programas;
 
-public class ProgramaInfinito implements Programa {
+import haltingproblem.prototype.ProgramaPrototype;
+
+public class ProgramaInfinito implements ProgramaPrototype {
     private int num;
 
     public ProgramaInfinito(int num) {
@@ -16,7 +18,7 @@ public class ProgramaInfinito implements Programa {
     }
 
     @Override
-    public Programa clone() {
+    public ProgramaPrototype clone() {
         return new ProgramaInfinito(this.num);
     }
 }
