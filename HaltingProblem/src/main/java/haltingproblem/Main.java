@@ -8,11 +8,6 @@ import haltingproblem.factories.ProgramaInfinitoFactory ;
 
 public class Main {
     public static void main(String[] args) {
-        
-        /*
-        Programa finito = new ProgramaFinito(5);
-        Programa infinito = new ProgramaInfinito(1);
-        */
 
         ProgramaFactory finitoFactoria = new ProgramaFinitoFactory();
         ProgramaFactory infinitoFactoria = new ProgramaInfinitoFactory();
