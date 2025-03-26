@@ -15,4 +15,8 @@ public class ProgramaFinito implements Programa {
         }
     }
 
+    @Override
+    public Programa clone() {
+        return new ProgramaFinito(this.num);
+    }
 }

@@ -14,4 +14,9 @@ public class ProgramaInfinito implements Programa {
             num++;
         }
     }
+
+    @Override
+    public Programa clone() {
+        return new ProgramaInfinito(this.num);
+    }
 }

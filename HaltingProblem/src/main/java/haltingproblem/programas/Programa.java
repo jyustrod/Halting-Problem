@@ -1,5 +1,6 @@
 package haltingproblem.programas;
 
-public interface Programa {
+public interface Programa extends Cloneable {
     void execute();
+    Programa clone();
 }

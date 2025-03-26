@@ -10,16 +10,13 @@ public class Main {
         Programa finito = new ProgramaFinito(5);
         Programa infinito = new ProgramaInfinito(1);
 
-        System.out.println("Probando programa finito:");
-        finito.execute();
+        Programa clonFinito = finito.clone();
+        Programa clonInfinito = infinito.clone();
 
-        System.out.println("\nProbando programa infinito:");
-        // countUp.execute(); // Descomentar para probar bucle infinito
+        System.out.println("Probando programa finito clonado:");
+        clonFinito.execute();
 
-        System.out.println("\nProbando Reverser con programa finito:");
-        // Reverser.execute(finito); // Descomentar para probar bucle infinito
-
-        System.out.println("\nProbando Reverser con programa infinito:");
-        Reverser.execute(infinito);
+        System.out.println("\nProbando Reverser con programa infinito clonado:");
+        // Reverser.execute(clonInfinito); // Descomentar para probar bucle infinito
     }
 }
