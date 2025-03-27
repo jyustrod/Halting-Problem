@@ -11,7 +11,7 @@ public class ProgramaFinito implements ProgramaPrototype {
 
     @Override
     public void execute() {
-        while (num > 0) {
+        while (num > 0 && !Thread.interrupted()) {
             System.out.println(num);
             num--;
         }
@@ -20,5 +20,9 @@ public class ProgramaFinito implements ProgramaPrototype {
     @Override
     public ProgramaPrototype clone() {
         return new ProgramaFinito(this.num);
+    }
+
+    public int getNum() {
+        return num;
     }
 }
