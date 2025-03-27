@@ -9,20 +9,11 @@ public class Director {
         this.builder = builder;
     }
 
-    public void changeBuilder(ProgramaBuilder builder) {
+    public void cambiarBuilder(ProgramaBuilder builder) {
         this.builder = builder;
     }
 
-    public void make(String tipo, int num) {
-        builder.reset();
-        if (tipo.equalsIgnoreCase("finito")) {
-            builder.setTipoFinito(num);
-        } else {
-            builder.setTipoInfinito(num);
-        }
-    }
-
-    public Programa getPrograma() {
-        return builder.getResult();
+    public Programa construirPrograma(int num) {
+        return builder.build(num);
     }
 }
