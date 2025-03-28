@@ -1,5 +1,6 @@
 package haltingproblem;
 
+import haltingproblem.maquinas.HaltChecker;
 import haltingproblem.maquinas.Reverser;
 import haltingproblem.programas.Programa;
 import haltingproblem.factories.ProgramaFactory;
@@ -8,11 +9,6 @@ import haltingproblem.factories.ProgramaInfinitoFactory ;
 
 public class Main {
     public static void main(String[] args) {
-        
-        /*
-        Programa finito = new ProgramaFinito(5);
-        Programa infinito = new ProgramaInfinito(1);
-        */
 
         ProgramaFactory finitoFactoria = new ProgramaFinitoFactory();
         ProgramaFactory infinitoFactoria = new ProgramaInfinitoFactory();
@@ -21,15 +17,26 @@ public class Main {
         Programa infinito =  infinitoFactoria.crearPrograma(0);
 
         System.out.println("Probando programa finito:");
-        finito.execute();
+        if (HaltChecker.sePara(finito)) {
+            System.out.println("El programa ha terminado.");
+        } else {
+            System.out.println("El programa no ha terminado a tiempo.");
+        }
 
         System.out.println("\nProbando programa infinito:");
-        // infinito.execute(); // Descomentar para probar bucle infinito
+        if (HaltChecker.sePara(infinito)) {
+            System.out.println("El programa ha terminado.");
+        } else {
+            System.out.println("El programa no ha terminado a tiempo");
+        }
 
         System.out.println("\nProbando Reverser con programa finito:");
-        // Reverser.execute(finito); // Descomentar para probar bucle infinito
+        //Reverser.execute(finito); // Descomentar para probar bucle infinito
 
         System.out.println("\nProbando Reverser con programa infinito:");
-        Reverser.execute(infinito);
+         Reverser.execute(infinito);
+
+        System.out.println("\nProbando Reverser con Reverser (esto genera la paradoja):");
+         Reverser.execute(new Reverser()); // Descomentar para probar bucle infinito
     }
 }

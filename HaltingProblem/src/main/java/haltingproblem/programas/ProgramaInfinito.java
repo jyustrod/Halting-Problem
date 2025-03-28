@@ -9,9 +9,14 @@ public class ProgramaInfinito implements Programa {
 
     @Override
     public void execute() {
-        while (true) {
+        while (!Thread.interrupted()) {
             System.out.println(num);
             num++;
         }
     }
+
+    public int getNum() {
+        return num;
+    }
 }
+
