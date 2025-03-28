@@ -1,7 +1,6 @@
 package haltingproblem;
 
 import haltingproblem.builders.Director;
-import haltingproblem.builders.ProgramaBuilder;
 import haltingproblem.builders.ProgramaFinitoBuilder;
 import haltingproblem.builders.ProgramaInfinitoBuilder;
 import haltingproblem.maquinas.HaltChecker;
@@ -34,6 +33,9 @@ public class Main {
         // Reverser.execute(finito); // Descomentar para probar bucle infinito
 
         System.out.println("\nProbando Reverser con programa infinito:");
-        Reverser.execute(infinito);
+        // Reverser.execute(infinito);
+
+        System.out.println("\nProbando Reverser con Reverser (esto genera la paradoja):");
+        // Reverser.execute(new Reverser()); // Descomentar para probar bucle infinito
     }
 }

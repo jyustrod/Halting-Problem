@@ -18,5 +18,4 @@ public class ProgramaFinito implements Programa {
     public int getNum() {
         return num;
     }
-
 }
