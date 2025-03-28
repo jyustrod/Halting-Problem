@@ -2,9 +2,11 @@ package haltingproblem.programas;
 
 public class ProgramaInfinito implements Programa {
     private int num;
+    private Programa subPrograma;
 
-    public ProgramaInfinito(int num) {
+    public ProgramaInfinito(int num, Programa subPrograma) {
         this.num = num;
+        this.subPrograma = subPrograma;
     }
 
     @Override
@@ -17,5 +19,10 @@ public class ProgramaInfinito implements Programa {
 
     public int getNum() {
         return num;
+    }
+
+    @Override
+    public Programa getSubPrograma() {
+        return subPrograma;
     }
 }

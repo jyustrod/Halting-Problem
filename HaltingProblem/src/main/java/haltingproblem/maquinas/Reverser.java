@@ -22,4 +22,9 @@ public class Reverser implements Programa {
     public int getNum() {
         throw new UnsupportedOperationException("Reverser no usa números.");
     }
+
+    @Override
+    public Programa getSubPrograma() {
+        throw new UnsupportedOperationException("Reverser no tiene subprogramas.");
+    }
 }
