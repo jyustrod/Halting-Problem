@@ -2,7 +2,13 @@ package haltingproblem.maquinas;
 
 import haltingproblem.programas.Programa;
 
-public class Reverser {
+public class Reverser implements Programa {
+
+    @Override
+    public void execute() {
+        execute(this);
+    }
+
     public static void execute(Programa programa) {
         if (HaltChecker.sePara(programa)) {
             while (true) {
@@ -12,4 +18,9 @@ public class Reverser {
             System.out.println("El reverser ha parado.");
         }
     }
+    @Override
+    public int getNum() {
+        throw new UnsupportedOperationException("Reverser no usa números.");
+    }
 }
+

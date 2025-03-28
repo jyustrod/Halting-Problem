@@ -37,9 +37,13 @@ public class Main {
         }
 
         System.out.println("\nProbando Reverser con programa finito:");
-        // Reverser.execute(finito);
+        // Reverser.execute(finito); // Descomentar para probar bucle infinito
 
         System.out.println("\nProbando Reverser con programa infinito:");
         // Reverser.execute(infinito);
+
+        System.out.println("\nProbando Reverser con Reverser (esto genera la paradoja):");
+        // Reverser.execute(new Reverser()); // Descomentar para probar bucle infinito
+
     }
 }
