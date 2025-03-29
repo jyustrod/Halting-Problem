@@ -13,10 +13,6 @@ public class HaltChecker {
         try {
             for (int i = 0; i < TIMEOUT_SECONDS; i++) {
                 Thread.sleep(1000);
-                if (programa.getNum() <= 0) {
-                    future.cancel(true);
-                    return true;
-                }
             }
             future.cancel(true);
             return false;

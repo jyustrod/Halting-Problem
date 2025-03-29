@@ -13,7 +13,7 @@ public class Director {
         this.builder = builder;
     }
 
-    public Programa construirPrograma(int num, Programa programa) {
-        return builder.build(num, programa);
+    public Programa construirPrograma(Programa programa) {
+        return builder.build(programa);
     }
 }

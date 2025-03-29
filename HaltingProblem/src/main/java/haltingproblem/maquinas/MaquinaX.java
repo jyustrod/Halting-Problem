@@ -3,30 +3,19 @@ package haltingproblem.maquinas;
 import haltingproblem.programas.Programa;
 
 public class MaquinaX implements Programa {
-    private Programa programa;
+    private Programa subPrograma;
 
     public MaquinaX(Programa programa) {
-        this.programa = programa;
+        this.subPrograma = programa;
     }
 
     @Override
     public void execute() {
-        if (HaltChecker.sePara(new MaquinaX(programa))) {
-            while (true) {
-                System.out.println("MaquinaX ejecutándose infinitamente.");
-            }
-        } else {
-            System.out.println("MaquinaX ha parado.");
-        }
-    }
-
-    @Override
-    public int getNum() {
-        throw new UnsupportedOperationException("MaquinaX no usa números.");
+        Reverser.execute(this);
     }
 
     @Override
     public Programa getSubPrograma() {
-        return programa;
+        return subPrograma;
     }
 }

@@ -18,10 +18,6 @@ public class Reverser implements Programa {
             System.out.println("El reverser ha parado.");
         }
     }
-    @Override
-    public int getNum() {
-        throw new UnsupportedOperationException("Reverser no usa números.");
-    }
 
     @Override
     public Programa getSubPrograma() {

@@ -1,24 +1,22 @@
 package haltingproblem.programas;
 
 public class ProgramaFinito implements Programa {
-    private int num;
     private Programa subPrograma;
 
-    public ProgramaFinito(int num, Programa subPrograma) {
-        this.num = num;
-        this.subPrograma = subPrograma;
+    public ProgramaFinito(Programa programa) {
+        this.subPrograma = programa;
     }
 
     @Override
     public void execute() {
+        int num = 10; // Valor arbitrario para ejecución finita
         while (num > 0 && !Thread.interrupted()) {
             System.out.println(num);
             num--;
         }
-    }
-
-    public int getNum() {
-        return num;
+        if (subPrograma != null) {
+            subPrograma.execute();
+        }
     }
 
     @Override

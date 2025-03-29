@@ -1,27 +1,23 @@
 package haltingproblem.programas;
 
 public class ProgramaInfinito implements Programa {
-    private int num;
     private Programa subPrograma;
 
-    public ProgramaInfinito(int num, Programa subPrograma) {
-        this.num = num;
-        this.subPrograma = subPrograma;
+    public ProgramaInfinito(Programa programa) {
+        this.subPrograma = programa;
     }
 
     @Override
     public void execute() {
         while (!Thread.interrupted()) {
-            System.out.println(num);
-            num++;
+            System.out.println("Ejecutando infinitamente");
+        }
+        if (subPrograma != null) {
+            subPrograma.execute();
         }
     }
 
-    public int getNum() {
-        return num;
-    }
-
-    @Override
+@Override
     public Programa getSubPrograma() {
         return subPrograma;
     }
